@@ -1,0 +1,56 @@
+{
+    "name": "adimiuprix/coinmarketcap",
+    "version": "1.0.0",
+    "description": "CoinMarketCap API Client for Laravel",
+    "keywords": ["coinmarketcap", "cryptocurrency", "api", "laravel", "bitcoin", "ethereum"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Sazonov",
+            "email": "sovletig@gmail.com",
+            "homepage": "https://github.com/adimiuprix"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "guzzlehttp/guzzle": "^8.2.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "psr/http-client": "^1.0.3",
+        "psr/http-factory": "^1.1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^13.3.5",
+        "phpstan/phpstan": "^2.2.16",
+        "friendsofphp/php-cs-fixer": "^3.95.27"
+    },
+    "autoload": {
+        "psr-4": {
+            "adimiuprix\\CoinMarketCap\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "adimiuprix\\CoinMarketCap\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "adimiuprix\\CoinMarketCap\\CoinMarketCapServiceProvider"
+            ],
+            "aliases": {
+                "CoinMarketCap": "adimiuprix\\CoinMarketCap\\Facades\\CoinMarketCap"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "phpstan": "vendor/bin/phpstan analyse src --level=8",
+        "cs-fix": "vendor/bin/php-cs-fixer fix"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
